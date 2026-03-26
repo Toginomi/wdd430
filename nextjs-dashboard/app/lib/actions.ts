@@ -71,6 +71,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
     }
     
     // Revalidate the cache for the invoices page and redirect the user.
+    revalidatePath('/dashboard');
     revalidatePath('/dashboard/invoices');
     redirect('/dashboard/invoices');
 }
@@ -106,12 +107,14 @@ export async function updateInvoice(
     return { message: 'Database Error: Failed to Update Invoice.' };
   }
  
+  revalidatePath('/dashboard');
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');
 }
 
 export async function deleteInvoice(id: string) {
   await sql`DELETE FROM invoices WHERE id = ${id}`;
+  revalidatePath('/dashboard');
   revalidatePath('/dashboard/invoices');
 }
 
