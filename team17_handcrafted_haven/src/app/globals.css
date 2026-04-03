@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #3d2d32;
+  --secondary-color: #fad7c6;
+  --accent-1: #92AC86;
+  --accent-2: #1E3F20;
+  --accent-3: #345830;
+  --site-background: #fad7c68f;
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  /* box model */
+  margin: 0 3rem;
+
+  /* colors */
+  background-color: var(--site-background);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@media only screen and (max-width:850px) {
+  body {
+    margin: 0 1rem;
+  }
+}
