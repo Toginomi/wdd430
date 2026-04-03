@@ -44,4 +44,4 @@ next-env.d.ts
 gpt.masterprompt
 
 
-pnpm-lock.yaml
+pnpm-workspace.yaml
